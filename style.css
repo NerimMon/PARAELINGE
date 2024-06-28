@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: blue;
+    background-color: black;
 }
 
 @keyframes cambiocolor {
@@ -14,9 +14,10 @@ body {
 }
 
 .cora {
-    --tamaño: 250px;
+    --tamaño: 150px;
     --color: purple; 
     height: var(--tamaño);
+    width: var(--tamaño);
     background: var(--color);
     transform: rotate(50deg);
     animation: heart .20s infinite alternate ease, cambiocolor 15s infinite;
