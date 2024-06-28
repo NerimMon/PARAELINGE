@@ -8,9 +8,26 @@ body {
 
 @keyframes cambiocolor {
     0%, 100% { --color: purple; }
-    25% { --color: pink;}
+    25% { --color: pink; }
     50% { --color: red; }
-    75% { --color:  purple; }
+    75% { --color: purple; }
+}
+
+@keyframes heart {
+    from {
+        transform: scale(1.5) rotate(45deg);
+    }
+}
+
+@keyframes fireworks {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
 }
 
 .cora {
@@ -21,41 +38,90 @@ body {
     background: var(--color);
     transform: rotate(45deg);
     animation: heart .5s infinite alternate ease, cambiocolor 15s infinite;
-    position: relative;  
+    position: relative;
 }
 
-.cora p{
+.cora::before, .cora::after {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    height: var(--tamaño);
+    width: var(--tamaño);
+    background: var(--color);
+    position: absolute; 
+}
+
+.cora::before {
+    transform: translateY(-50%);
+}
+
+.cora::after {
+    transform: translateX(-50%);
+}
+
+.cora p {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
     margin: 0;
     color: black;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman';
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';
     font-size: 20px;
     white-space: nowrap;
     z-index: 1;
 }
 
-.cora::before, .cora::after{
-    content:"";
-    display: block;
+.fireworks {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.firework {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background-color: white;
     border-radius: 50%;
-    height: var(--tamaño);
-    width: var(var(--tamaño));
-    background: var(--color);
-    position: absolute; 
+    opacity: 0;
+    animation: fireworks 1s infinite ease-out;
 }
 
-.cora::before{
-    transform: translatev(-75%px); 
-}
-.cora::after{
-    transform: translatex(-75%);
+.firework:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(100px);
 }
 
-@keyframes heart {
-    from {
-        transform: scale(1.5) rotate(45deg);
-    }
+.firework:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(45deg) translateX(100px);
+}
+
+.firework:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(90deg) translateX(100px);
+}
+
+.firework:nth-child(4) {
+    transform: translate(-50%, -50%) rotate(135deg) translateX(100px);
+}
+
+.firework:nth-child(5) {
+    transform: translate(-50%, -50%) rotate(180deg) translateX(100px);
+}
+
+.firework:nth-child(6) {
+    transform: translate(-50%, -50%) rotate(225deg) translateX(100px);
+}
+
+.firework:nth-child(7) {
+    transform: translate(-50%, -50%) rotate(270deg) translateX(100px);
+}
+
+.firework:nth-child(8) {
+    transform: translate(-50%, -50%) rotate(315deg) translateX(100px);
 }
