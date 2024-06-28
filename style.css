@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0c0b0b;
+}
+
+@keyframes cambiocolor {
+    0%, 100% { --color: purple; }
+    25% { --color: pink;}
+    50% { --color: red; }
+    75% { --color:  purple; }
+}
+
+.cora {
+    --tamaño: 250px;
+    --color: purple; 
+    height: var(--tamaño);
+    background: var(--color0);
+    transform: rotate(50deg);
+    animation: heart .20s infinite alternate ease, cambiocolor 15s infinite;
+    position: relative;  
+}
+
+.cora p{
+    position: absolute;
+    top: 70%;
+    left: 70%;
+    transform: translate(-70%, -70%) rotate(-50deg);
+    margin: black;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman';
+    font-size: 20px;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.cora::before, .cora::after{
+    content:"";
+    display: block;
+    border-radius: 70%;
+    height: var(--tamaño);
+    width: var(var(--tamaño));
+    background: var(--color);
+    position: absolute; 
+}
+
+.cora::before{
+    transform: translatev(-75%px); 
+}
+.cora::after{
+    transform: translatex(-75%);
+}
+
+@keyframes heart {
+    from {
+        transform: scale(1.5) rotate(50deg);
+    }
+}
