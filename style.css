@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #0c0b0b;
+    background-color: blue;
 }
 
 @keyframes cambiocolor {
