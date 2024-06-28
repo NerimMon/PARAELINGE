@@ -17,7 +17,7 @@ body {
     --tamaño: 250px;
     --color: purple; 
     height: var(--tamaño);
-    background: var(--color0);
+    background: var(--color);
     transform: rotate(50deg);
     animation: heart .20s infinite alternate ease, cambiocolor 15s infinite;
     position: relative;  
