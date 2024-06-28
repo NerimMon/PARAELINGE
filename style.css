@@ -19,17 +19,18 @@ body {
     height: var(--tamaño);
     width: var(--tamaño);
     background: var(--color);
-    transform: rotate(50deg);
-    animation: heart .20s infinite alternate ease, cambiocolor 15s infinite;
+    transform: rotate(45deg);
+    animation: heart .5s infinite alternate ease, cambiocolor 15s infinite;
     position: relative;  
 }
 
 .cora p{
     position: absolute;
-    top: 70%;
-    left: 70%;
-    transform: translate(-70%, -70%) rotate(-50deg);
-    margin: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    margin: 0;
+    color: black;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman';
     font-size: 20px;
     white-space: nowrap;
@@ -39,7 +40,7 @@ body {
 .cora::before, .cora::after{
     content:"";
     display: block;
-    border-radius: 70%;
+    border-radius: 50%;
     height: var(--tamaño);
     width: var(var(--tamaño));
     background: var(--color);
@@ -55,6 +56,6 @@ body {
 
 @keyframes heart {
     from {
-        transform: scale(1.5) rotate(50deg);
+        transform: scale(1.5) rotate(45deg);
     }
 }
